@@ -96,28 +96,28 @@ hvac-anomaly-detection/
 #### 1. Time Series Anomaly Detection
 This plot shows the chilled water consumption over time with detected anomalies highlighted in red:
 
-![Anomaly Detection Time Series](outputs/anomaly_plot.png)
+![Anomaly Detection Time Series](output/anomaly_plot.png)
 
 *The time series reveals seasonal patterns and successfully identifies anomalous consumption periods that don't follow expected patterns.*
 
 #### 2. Temperature vs. Consumption Analysis
 Scatter plot showing the relationship between air temperature and chilled water consumption:
 
-![Temperature vs Consumption](outputs/anomaly_analysis.png)
+![Temperature vs Consumption](output/anomaly_analysis.png)
 
 *Most normal operations follow a clear temperature-consumption relationship, while anomalies (shown in pink) often deviate from this expected pattern.*
 
 #### 3. Model Explainability - SHAP Summary (All Data)
 SHAP values explaining the overall model behavior:
 
-![SHAP Summary](outputs/shap_summary.png)
+![SHAP Summary](output/shap_summary.png)
 
 *This plot shows how air temperature influences the model's predictions across the entire dataset.*
 
 #### 4. Model Explainability - SHAP for Anomalies
 SHAP values specifically for detected anomalies:
 
-![SHAP Anomalies](outputs/shap_anomalies.png)
+![SHAP Anomalies](output/shap_anomalies.png)
 
 *This visualization helps understand what features drive the anomaly detection for flagged data points.*
 
