@@ -1,4 +1,4 @@
-# HVAC Chiller Anomaly Detection
+# HVAC Fault and Anomaly Detection
 
 A machine learning-based approach to detect anomalies in HVAC chiller systems using the Building Data Genome Project 2 dataset. This project identifies potential equipment faults and inefficiencies in commercial building cooling systems.
 
