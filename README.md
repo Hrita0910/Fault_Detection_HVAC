@@ -40,13 +40,13 @@ pip install kagglehub pandas numpy matplotlib seaborn scikit-learn shap
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/hvac-anomaly-detection.git
-cd hvac-anomaly-detection
+git clone https://github.com/Hrita0910/Fault_Detection_HVAC.git
+cd Fault_Detection_HVAC
 ```
 
 2. Run the main script:
 ```bash
-python hvac_anomaly_detection.py
+jupyter notebook Fault_Detection.ipynb
 ```
 
 ## 📁 Project Structure
@@ -54,20 +54,20 @@ python hvac_anomaly_detection.py
 ```
 hvac-anomaly-detection/
 │
-├── hvac_anomaly_detection.py    # Main analysis script
-├── README.md                    # This file
-├── requirements.txt             # Python dependencies
+├── Fault_Detection.ipynb    # Main Colab notebook
+├── README.md                       # This file
+├── requirements.txt                # Python dependencies
 │
-├── data/                        # Generated data files
-│   ├── preprocessed_chilledwater.csv
-│   ├── chiller_anomalies.csv
-│   └── heuristic_triggers.csv
-│
-├── plots/                       # Generated visualizations
+├── sample_outputs/                 # Results and plots
     ├── anomaly_plot.png
     ├── shap_summary.png
     ├── shap_anomalies.png
-    └── anomaly_analysis.png
+    ├── anomaly_analysis.png
+    ├── preprocessed_chilledwater.csv
+    ├── chiller_anomalies.csv
+    └── heuristic_triggers.csv
+
+
 
 ```
 
