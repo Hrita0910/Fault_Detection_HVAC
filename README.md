@@ -55,7 +55,6 @@ hvac-anomaly-detection/
     ├── shap_summary.png
     ├── shap_anomalies.png
     ├── anomaly_analysis.png
-    ├── preprocessed_chilledwater.csv
     ├── chiller_anomalies.csv
     └── heuristic_triggers.csv
 ```
@@ -119,16 +118,6 @@ SHAP values specifically for detected anomalies:
 
 ![SHAP Anomalies](output/shap_anomalies.png)
 
-*This visualization helps understand what features drive the anomaly detection for flagged data points.*
-
-### Sample Output Data
-The analysis also generates several CSV files with detailed results:
-
-| Timestamp | Consumption (kWh/m²) | Air Temperature (°C) | Anomaly Status | Heuristic Trigger |
-|-----------|---------------------|---------------------|----------------|------------------|
-| 2016-05-29 14:00:00 | 0.113864 | 32.8 | Anomaly | True |
-| 2016-05-29 15:00:00 | 0.116156 | 32.8 | Anomaly | True |
-| 2016-06-27 14:00:00 | 0.114339 | 33.3 | Anomaly | True |
 
 ## 📊 Key Findings
 
