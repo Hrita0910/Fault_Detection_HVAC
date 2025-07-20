@@ -64,13 +64,11 @@ hvac-anomaly-detection/
 │   └── heuristic_triggers.csv
 │
 ├── plots/                       # Generated visualizations
-│   ├── anomaly_plot.png
-│   ├── shap_summary.png
-│   ├── shap_anomalies.png
-│   └── anomaly_analysis.png
-│
-└── results/                     # Analysis results
-    └── anomaly_summary.txt
+    ├── anomaly_plot.png
+    ├── shap_summary.png
+    ├── shap_anomalies.png
+    └── anomaly_analysis.png
+
 ```
 
 ## 🔬 Methodology
@@ -116,81 +114,3 @@ hvac-anomaly-detection/
 - Anomalies are not always correlated with extreme temperatures
 - Some high-consumption periods during mild weather suggest equipment issues
 - The model successfully identifies both demand-driven and fault-related anomalies
-
-## 🛠️ Configuration
-
-Key parameters you can adjust:
-
-```python
-# Anomaly detection
-contamination = 0.05  # Expected percentage of anomalies (5%)
-
-# Heuristic threshold
-threshold_multiplier = 2  # Standard deviations above mean
-
-# Building selection
-building = 'Cockatoo_health_Ashlie'  # Change to analyze different buildings
-```
-
-## 📝 Usage Examples
-
-### Analyze a Different Building
-```python
-# Get list of available buildings
-print(valid_buildings)
-
-# Select a new building
-building = 'your_building_name'
-```
-
-### Adjust Sensitivity
-```python
-# More sensitive (detects more anomalies)
-model = IsolationForest(contamination=0.1)
-
-# Less sensitive (detects fewer anomalies)  
-model = IsolationForest(contamination=0.02)
-```
-
-## 🔮 Future Enhancements
-
-- [ ] Multi-building comparative analysis
-- [ ] Seasonal anomaly detection
-- [ ] Integration with real-time monitoring systems
-- [ ] Additional features (occupancy, equipment schedules)
-- [ ] Automated alert system
-- [ ] Web dashboard for visualization
-
-## 📖 References
-
-- Miller, Clayton, et al. "The Building Data Genome Project 2" (2020)
-- Liu, Fei Tony, Kai Ming Ting, and Zhi-Hua Zhou. "Isolation forest." 2008
-- Lundberg, Scott M., and Su-In Lee. "A unified approach to interpreting model predictions." 2017
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Building Data Genome Project 2 team for the dataset
-- Scikit-learn community for the machine learning tools
-- SHAP library developers for explainability tools
-
-## 📧 Contact
-
-Your Name - your.email@example.com
-
-Project Link: https://github.com/yourusername/hvac-anomaly-detection
-
----
-
-⭐ **Found this project useful? Give it a star!** ⭐
