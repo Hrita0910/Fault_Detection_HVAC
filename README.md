@@ -1,9 +1,7 @@
 # HVAC Fault and Anomaly Detection
-
 A machine learning-based approach to detect anomalies in HVAC chiller systems using the Building Data Genome Project 2 dataset. This project identifies potential equipment faults and inefficiencies in commercial building cooling systems.
 
 ## 🎯 Project Overview
-
 This project analyzes chilled water consumption patterns in commercial buildings to detect anomalies that may indicate:
 - Equipment malfunctions
 - System inefficiencies  
@@ -11,7 +9,6 @@ This project analyzes chilled water consumption patterns in commercial buildings
 - Unusual operating conditions
 
 ## 📊 Dataset
-
 **Source**: [Building Data Genome Project 2](https://www.kaggle.com/datasets/claytonmiller/buildingdatagenomeproject2) on Kaggle
 
 The dataset includes:
@@ -21,7 +18,6 @@ The dataset includes:
 - Hot water consumption data
 
 ## 🔧 Features
-
 - **Data Preprocessing**: Handles missing values and normalizes consumption by building size
 - **Anomaly Detection**: Uses Isolation Forest algorithm to identify unusual patterns
 - **Explainable AI**: SHAP (SHapley Additive exPlanations) values for model interpretability
@@ -31,34 +27,30 @@ The dataset includes:
 ## 🚀 Getting Started
 
 ### Prerequisites
-
 ```bash
 pip install kagglehub pandas numpy matplotlib seaborn scikit-learn shap
 ```
 
 ### Installation
-
 1. Clone the repository:
 ```bash
 git clone https://github.com/Hrita0910/Fault_Detection_HVAC.git
 cd Fault_Detection_HVAC
 ```
-
 2. Run the main script:
 ```bash
 jupyter notebook Fault_Detection.ipynb
 ```
 
 ## 📁 Project Structure
-
 ```
 hvac-anomaly-detection/
 │
-├── Fault_Detection.ipynb    # Main Colab notebook
+├── Fault_Detection.ipynb          # Main Colab notebook
 ├── README.md                       # This file
 ├── requirements.txt                # Python dependencies
 │
-├── sample_outputs/                 # Results and plots
+├── outputs/                        # Results and plots
     ├── anomaly_plot.png
     ├── shap_summary.png
     ├── shap_anomalies.png
@@ -66,9 +58,6 @@ hvac-anomaly-detection/
     ├── preprocessed_chilledwater.csv
     ├── chiller_anomalies.csv
     └── heuristic_triggers.csv
-
-
-
 ```
 
 ## 🔬 Methodology
@@ -104,13 +93,55 @@ hvac-anomaly-detection/
 
 ### Visualizations Generated
 
-1. **Time Series Plot**: Shows consumption over time with anomalies highlighted
-2. **Scatter Plot**: Consumption vs. temperature with anomaly classification
-3. **SHAP Summary**: Feature importance for model predictions
-4. **SHAP Anomalies**: Explains what drives anomaly detection
+#### 1. Time Series Anomaly Detection
+This plot shows the chilled water consumption over time with detected anomalies highlighted in red:
+
+![Anomaly Detection Time Series](outputs/anomaly_plot.png)
+
+*The time series reveals seasonal patterns and successfully identifies anomalous consumption periods that don't follow expected patterns.*
+
+#### 2. Temperature vs. Consumption Analysis
+Scatter plot showing the relationship between air temperature and chilled water consumption:
+
+![Temperature vs Consumption](outputs/anomaly_analysis.png)
+
+*Most normal operations follow a clear temperature-consumption relationship, while anomalies (shown in pink) often deviate from this expected pattern.*
+
+#### 3. Model Explainability - SHAP Summary (All Data)
+SHAP values explaining the overall model behavior:
+
+![SHAP Summary](outputs/shap_summary.png)
+
+*This plot shows how air temperature influences the model's predictions across the entire dataset.*
+
+#### 4. Model Explainability - SHAP for Anomalies
+SHAP values specifically for detected anomalies:
+
+![SHAP Anomalies](outputs/shap_anomalies.png)
+
+*This visualization helps understand what features drive the anomaly detection for flagged data points.*
+
+### Sample Output Data
+The analysis also generates several CSV files with detailed results:
+
+| Timestamp | Consumption (kWh/m²) | Air Temperature (°C) | Anomaly Status | Heuristic Trigger |
+|-----------|---------------------|---------------------|----------------|------------------|
+| 2016-05-29 14:00:00 | 0.113864 | 32.8 | Anomaly | True |
+| 2016-05-29 15:00:00 | 0.116156 | 32.8 | Anomaly | True |
+| 2016-06-27 14:00:00 | 0.114339 | 33.3 | Anomaly | True |
 
 ## 📊 Key Findings
 
-- Anomalies are not always correlated with extreme temperatures
-- Some high-consumption periods during mild weather suggest equipment issues
-- The model successfully identifies both demand-driven and fault-related anomalies
+- **Temperature Independence**: Anomalies are not always correlated with extreme temperatures
+- **Equipment Issues**: Some high-consumption periods during mild weather suggest equipment malfunctions
+- **Dual Detection**: The model successfully identifies both demand-driven and fault-related anomalies
+- **Seasonal Patterns**: Summer months show higher anomaly rates due to increased cooling demands
+- **Maintenance Indicators**: Low-temperature anomalies often indicate potential system faults requiring attention
+
+## 💡 Practical Applications
+
+This system can be used for:
+- **Predictive Maintenance**: Early detection of equipment failures
+- **Energy Optimization**: Identifying inefficient operation periods
+- **Cost Reduction**: Preventing major equipment failures through early intervention
+- **Performance Monitoring**: Continuous assessment of HVAC system efficiency
